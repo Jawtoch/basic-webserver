@@ -8,6 +8,9 @@ node {
 		app = docker.build('gaune/basic-webserver')
 	}
 
+	sh 'echo $PATH'
+	sh 'which docker'
+
 	stage('Test image') {
 		app.inside {
 			sh 'echo "Test passed"'
