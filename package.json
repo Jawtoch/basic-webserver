@@ -1,0 +1,20 @@
+{
+  "name": "basic-webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jawtoch/basic-webserver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jawtoch/basic-webserver/issues"
+  },
+  "homepage": "https://github.com/Jawtoch/basic-webserver#readme"
+}
