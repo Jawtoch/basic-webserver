@@ -2,9 +2,9 @@
   "name": "basic-webserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "serve": "node index.js"
+    "serve": "node src/index.js"
   },
   "type": "module",
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Jawtoch/basic-webserver/issues"
   },
-  "homepage": "https://github.com/Jawtoch/basic-webserver#readme"
+  "homepage": "https://github.com/Jawtoch/basic-webserver#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
