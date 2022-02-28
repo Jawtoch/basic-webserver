@@ -1,26 +1,11 @@
 node {
-	def app
-	stage('Clone repository') {
-		checkout scm
-	}
-
-	stage('Build image') {
-		app = docker.build('gaune/basic-webserver')
-	}
-
-	sh 'echo $PATH'
-	sh 'which docker'
-
-	stage('Test image') {
-		app.inside {
-			sh 'echo "Test passed"'
-		}
-	}
-
-	stage('Push image') {
-		docker.withRegistry('https://registry.hub.docker.com', 'git') {            
-			app.push("${env.BUILD_NUMBER}")            
-			app.push("latest")        
-		}    
-	}
+  stage('SCM') {
+    checkout scm
+  }
+  stage('SonarQube Analysis') {
+    def scannerHome = tool 'Sonar scanner';
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
 }
